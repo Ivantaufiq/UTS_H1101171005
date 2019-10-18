@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">UTS_H1101171005</string>
+    <string name="komp1">Komponen 1</string>
+    <string name="komp2">Komponen 2</string>
+    <string name="komp3">Komponen 3</string>
+    <string name="komp4">Komponen 4</string>
+    <string name="komp5">Komponen 5</string>
+
+    <string name="komponen1">Aktivitas/Activity</string>
+    <string name="komponen2">Layanan/Service</string>
+    <string name="komponen3">Penerima Siaran/Receiver</string>
+    <string name="komponen4">Penyedia Materi/Content Provider</string>
+    <string name="komponen5">Intent</string>
+
+    <string name="textkom1">Aktivitas adalah titik masuk untuk berinteraksi dengan pengguna.
+        Ini mewakili satu layar dengan antarmuka pengguna. Misalnya, aplikasi email mungkin
+        memiliki satu aktivitas yang menampilkan daftar email baru, aktivitas lain untuk menulis email,
+        dan aktivitas satunya lagi untuk membaca email. Walaupun semua aktivitas bekerja sama untuk membentuk
+        pengalaman pengguna yang kohesif dalam aplikasi email, masing-masing tidak saling bergantung.
+        Karenanya, aplikasi berbeda bisa memulai salah satu aktivitas ini (jika aplikasi email mengizinkannya).
+        Misalnya, aplikasi kamera bisa memulai aktivitas dalam aplikasi email yang membuat email baru agar
+        pengguna bisa berbagi gambar. </string>
+
+    <string name="textkom2">Layanan adalah titik masuk serbaguna untuk menjaga aplikasi tetap berjalan di latar belakang
+        bagi semua jenis alasan. Ini adalah komponen yang berjalan di latar belakang untuk melakukan operasi yang berjalan
+        lama atau untuk melakukan pekerjaan bagi proses jarak jauh. Layanan tidak menyediakan antarmuka pengguna. Misalnya,
+        sebuah layanan bisa memutar musik di latar belakang sementara pengguna berada dalam aplikasi lain, atau layanan bisa
+        menarik data lewat jaringan tanpa memblokir interaksi pengguna dengan aktivitas. Komponen lain, seperti aktivitas,
+        bisa memulai layanan dan membiarkannya berjalan atau mengikat layanan untuk berinteraksi dengannya. Sebenarnya ada
+        dua layanan semantik berbeda yang memberi tahu sistem tentang cara mengelola aplikasi: Layanan yang dimulai memberi
+        tahu sistem agar tetap berjalan hingga pekerjaannya selesai. Hal ini bisa jadi untuk menyinkronkan beberapa data di
+        latar belakang atau memutar musik meskipun setelah pengguna meninggalkan aplikasi tersebut. Menyinkronkan data di
+        latar belakang atau memutar musik juga mewakili dua jenis layanan dimulai yang berbeda, yang memodifikasi bagaimana
+        sistem menanganinya:
+        -Pemutaran musik adalah sesuatu yang disadari secara langsung oleh pengguna, jadi aplikasi tersebut memberi tahu sistem
+        dengan mengatakan ingin berjalan di latar depan dengan notifikasi untuk memberi tahu pengguna tentang hal ini; dalam kasus
+        ini sistem memahami bahwa harus benar-benar berusaha keras untuk menjaga proses layanan itu tetap berjalan,
+        karena pengguna akan merasa tidak senang jika layanan itu hilang.
+        -Layanan latar belakang regular bukanlah sesuatu yang disadari pengguna secara langsung sebagai layanan yang berjalan,
+        jadi sistem tersebut memiliki kebebasan lebih dalam mengelola prosesnya. Layanan ini mungkin diperbolehkan untuk dimatikan
+        (lalu memulai ulang nanti) jika layanan ini memerlukan RAM untuk hal yang lebih penting bagi pengguna.</string>
+
+    <string name="textkom3">Penerima siaran adalah komponen yang memungkinkan sistem menyampaikan kejadian
+        di luar alur pengguna regular, menjadikan aplikasi tersebut dapat merespons pengumuman siaran seluruh sistem.
+        Oleh karena penerima siaran adalah entri yang didefinisikan dengan baik ke dalam aplikasi, sistem dapat
+        mengirimkan siaran meskipun ke aplikasi yang saat ini tidak berjalan. Jadi, misalnya, suatu aplikasi dapat
+        menjadwalkan alarm untuk mengirimkan notifikasi agar pengguna tahu tentang acara yang akan datang dan dengan
+        mengirimkan alarm tersebut ke Penerima Siaran aplikasi, aplikasi tersebut tidak perlu untuk tetap
+        berjalan hingga alarm mati. Banyak siaran berasal dari sistem, misalnya siaran yang mengumumkan bahwa
+        layar sudah dimatikan, baterai lemah, atau gambar sudah diambil. Aplikasi juga dapat mengawali siaran misalnya,
+        untuk memberi tahu aplikasi lain bahwa beberapa data sudah didownload ke perangkat dan tersedia untuk digunakan. </string>
+
+    <string name="textkom4">Penyedia materi mengelola set data aplikasi secara bersama-sama, yang dapat Anda simpan
+        di sistem file, di database SQLite, di web, atau di lokasi penyimpanan persisten lain yang dapat diakses aplikasi Anda.
+        Melalui penyedia materi, aplikasi lain bisa melakukan kueri atau memodifikasi data jika penyedia materi mengizinkannya.
+        Misalnya, sistem Android menyediakan penyedia materi yang mengelola informasi kontak pengguna. Karenanya, setiap aplikasi
+        dengan izin yang sesuai bisa melakukan kueri mengenai bagian dari penyedia materi, seperti ContactsContract.
+        Data, untuk membaca dan menulis informasi tentang orang tertentu. Aplikasi ini membujuk agar memikirkan penyedia konten sebagai
+        abstraksi di database, karena terdapat banyak API dan dukungan dibuat untuk kasus umum tersebut. Namun demikian, penyedia
+        konten memiliki beragam tujuan inti untuk perspektif desain-sistem. Bagi sistem, penyedia konten adalah titik masuk
+        ke dalam suatu aplikasi untuk memublikasikan item data bernama, yang diidentifikasi oleh skema URI. Jadi sebuah aplikasi
+        dapat memutuskan bagaimana ia ingin memetakan data yang ada di dalamnya ke ruang nama URI, membagikan URI tersebut ke entitas
+        lain yang dapat menggunakannya guna mengakses data. Ada beberapa hal tertentu yang dapat dilakukan sistem dalam mengelola sebuah
+        aplikasi:
+        -Menetapkan URI tidak mengharuskan aplikasi tetap berjalan, sehingga URI dapat terus ada setelah aplikasi yang memilikinya keluar.
+        Sistem hanya perlu memastikan bahwa aplikasi yang memilikinya masih berjalan saat harus mengambil data aplikasi tersebut
+        dari URI yang terkait.
+        -URI ini juga menyediakan model keamanan halus yang penting. Misalnya, sebuah aplikasi dapat menempatkan URO untuk gambar yang ada di papan klip, namun membiarkan penyedia kontennya terkunci sehingga aplikasi lain tidak dapat mengaksesnya secara bebas. Apabila aplikasi kedua berupaya mengakses URI tersebut di papan klip, sistem dapat mengizinkan aplikasi tersebut untuk mengakses data melalui pemberian izin URI sementara sehingga diizinkan mengakses data hanya di belakang URI tersebut, namun tidak ada data lainnya di aplikasi kedua itu.</string>
+
+    <string name="textkom5">Intent adalah objek perpesanan yang bisa Anda gunakan untuk meminta tindakan dari komponen aplikasi.
+        Ada dua tipe intent:
+        -Intent Eksplisit, menentukan aplikasi mana yang akan memenuhi persyaratan intent, dengan menyediakan nama paket aplikasi
+        target maupun nama class komponen yang sepenuhnya memenuhi syarat. Anda biasanya akan menggunakan intent eksplisit untuk
+        memulai sebuah komponen pada aplikasi Anda sendiri, karena Anda mengetahui nama class dari aktivitas atau layanan yang
+        ingin dimulai. Misalnya, Anda mungkin memulai aktivitas baru pada aplikasi sebagai respons terhadap tindakan pengguna,
+        atau mulai layanan untuk mendownload file di latar belakang.
+        -Intent implisit tidak menetapkan komponen tertentu, melainkan mendeklarasikan tindakan umum yang akan dilakukan,
+        yang memungkinkan komponen aplikasi lain untuk menanganinya. Misalnya, jika ingin menampilkan sebuah lokasi
+        pengguna di peta, Anda bisa menggunakan intent implisit untuk meminta aplikasi lain yang mampu menunjukkan lokasi yang
+        telah ditetapkan di peta tersebut.</string>
+
+
+    <string name="uts">Teknologi Bergerak</string>
+    <string name="syntax">Contoh Syntax</string>
+    <string name="link">Link Materi</string>
+
+    <string name="txtsyntax">Syntax : </string>
+    <string name="fintent">Filter Intent : </string>
+
+</resources>

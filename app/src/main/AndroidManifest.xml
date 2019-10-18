@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.uts_h1101171005">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ContohSyntax.Syntax5"
+            android:label="Kembali"
+            android:parentActivityName=".KomponenActivity.Komponen5Activity" />
+        <activity
+            android:name=".ContohSyntax.Syntax4"
+            android:label="Kembali"
+            android:parentActivityName=".KomponenActivity.Komponen4Activity" />
+        <activity
+            android:name=".ContohSyntax.Syntax3"
+            android:label="Kembali"
+            android:parentActivityName=".KomponenActivity.Komponen3Activity" />
+        <activity
+            android:name=".ContohSyntax.Syntax2"
+            android:label="Kembali"
+            android:parentActivityName=".KomponenActivity.Komponen2Activity" />
+        <activity
+            android:name=".ContohSyntax.Syntax1"
+            android:label="Kembali"
+            android:parentActivityName=".KomponenActivity.Komponen1Activity" />
+        <activity android:name=".KomponenActivity.Komponen5Activity"
+            android:label="Kembali"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".KomponenActivity.Komponen4Activity"
+            android:label="Kembali"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".KomponenActivity.Komponen3Activity"
+            android:label="Kembali"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".KomponenActivity.Komponen2Activity"
+            android:label="Kembali"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".KomponenActivity.Komponen1Activity"
+            android:label="Kembali"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
